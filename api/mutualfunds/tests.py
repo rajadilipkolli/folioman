@@ -28,7 +28,36 @@ class TestImportCas(TestCase):
 
     def test_import_cas_new_folio_creation(self):
         # Test case for creating a new folio
-        self.data["folios"] = [{"amc_id": "123", "folio": "F123", "PANKYC": "ok", "PAN": "ABC123"}]
+        self.data["folios"] = [{
+            "amc_id": "123",
+            "folio": "91095687154 / 0",
+            "KYC" : "OK",
+            "PANKYC": "OK",
+            "PAN": "ABCDE1234F",
+            "schemes": [{
+                "advisor": "INA000006651",
+                "amfi": "120503",
+                "close": 146.556,
+                "close_calculated": 146.556,
+                "isin": "INF846K01EW2",
+                "open": 0.0,
+                "rta": "KFINTECH",
+                "rta_code": "128TSDGG",
+                "scheme": "Axis ELSS Tax Saver Fund - Direct Growth - ISIN: INF846K01EW2",
+                "transactions": [
+                    {
+                        "amount": 1000.0,
+                        "balance": 23.711,
+                        "date": "2017-09-20",
+                        "description": "Purchase",
+                        "dividend_rate": null,
+                        "nav": 42.1747,
+                        "type": "PURCHASE",
+                        "units": 23.711
+                    }
+                ]
+            }]
+        }]
         with self.assertRaises(ObjectDoesNotExist):
             import_cas(self.data, self.user_id)
         self.assertEqual(Folio.objects.count(), 1)
