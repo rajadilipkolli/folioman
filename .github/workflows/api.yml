@@ -46,4 +46,5 @@ jobs:
           CACHE_URL: rediscache://localhost:16379/1?client_class=django_redis.client.DefaultClient&timeout=86400
           CELERY_BROKER_URL: redis://localhost:16379/3
           CELERY_RESULT_BACKEND: redis://localhost:16379/5
+          QUANDL_API_KEY: PUT_QUANDL_API_HERE
         run: python manage.py test core.tests
