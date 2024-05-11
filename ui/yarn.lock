@@ -1586,10 +1586,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@highcharts/map-collection@npm:^1.1.3":
-  version: 1.1.3
-  resolution: "@highcharts/map-collection@npm:1.1.3"
-  checksum: d3a594aefc9ad472825bbadc8407285e0710021a21261249844f38b6b6d67bbf69159e7ca113a78a40ec23420c05870d47b64b305b9e4de3c925e08e38905ef1
+"@highcharts/map-collection@npm:^2.0.0":
+  version: 2.1.0
+  resolution: "@highcharts/map-collection@npm:2.1.0"
+  checksum: acf19a80fc07e152c9df36ad0f14435eb4a5b9079b88f67216d1389643fc7bd32fa209ff2bc5331bd941a52c99403163a47a58ba7da2c3e3352e8c63f7e7c1f1
   languageName: node
   linkType: hard
 
@@ -3759,20 +3759,20 @@ __metadata:
   linkType: hard
 
 "autoprefixer@npm:^10.2.5":
-  version: 10.3.7
-  resolution: "autoprefixer@npm:10.3.7"
+  version: 10.4.19
+  resolution: "autoprefixer@npm:10.4.19"
   dependencies:
-    browserslist: ^4.17.3
-    caniuse-lite: ^1.0.30001264
-    fraction.js: ^4.1.1
+    browserslist: ^4.23.0
+    caniuse-lite: ^1.0.30001599
+    fraction.js: ^4.3.7
     normalize-range: ^0.1.2
-    picocolors: ^0.2.1
-    postcss-value-parser: ^4.1.0
+    picocolors: ^1.0.0
+    postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.1.0
   bin:
     autoprefixer: bin/autoprefixer
-  checksum: e5b0a8ca75164cb1aa688dd5a4210b0e3720abb94910eed7f32790aeff352ed26adc47bed145cd22c83fe03d059d903b62baa7130ed2785990e7e42a8b952704
+  checksum: 3a4bc5bace05e057396dca2b306503efc175e90e8f2abf5472d3130b72da1d54d97c0ee05df21bf04fe66a7df93fd8c8ec0f1aca72a165f4701a02531abcbf11
   languageName: node
   linkType: hard
 
@@ -4168,6 +4168,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"browserslist@npm:^4.23.0":
+  version: 4.23.0
+  resolution: "browserslist@npm:4.23.0"
+  dependencies:
+    caniuse-lite: ^1.0.30001587
+    electron-to-chromium: ^1.4.668
+    node-releases: ^2.0.14
+    update-browserslist-db: ^1.0.13
+  bin:
+    browserslist: cli.js
+  checksum: 436f49e796782ca751ebab7edc010cfc9c29f68536f387666cd70ea22f7105563f04dd62c6ff89cb24cc3254d17cba385f979eeeb3484d43e012412ff7e75def
+  languageName: node
+  linkType: hard
+
 "buffer-from@npm:^1.0.0":
   version: 1.1.2
   resolution: "buffer-from@npm:1.1.2"
@@ -4462,7 +4476,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30000981, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001228, caniuse-lite@npm:^1.0.30001264, caniuse-lite@npm:^1.0.30001271":
+"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30000981, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001228, caniuse-lite@npm:^1.0.30001271, caniuse-lite@npm:^1.0.30001587, caniuse-lite@npm:^1.0.30001599":
   version: 1.0.30001617
   resolution: "caniuse-lite@npm:1.0.30001617"
   checksum: a03bfd6ed474d14378f1b93bf90e9b0031e56a813cf42b364e5a86881ecdcdfdd58bf94c56febb0e4128c5ab57cc0a760ab7f3ef7ce0c1ead1af78a8e806375e
@@ -5950,6 +5964,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"electron-to-chromium@npm:^1.4.668":
+  version: 1.4.763
+  resolution: "electron-to-chromium@npm:1.4.763"
+  checksum: e32a2ed7e8b305cb01577caf26d9f0f206a476279983b28a577322045786fdec4088c9382a40b357c4590b619877cb49afe985837078642fa96d2bd526c2f84f
+  languageName: node
+  linkType: hard
+
 "elliptic@npm:^6.5.3":
   version: 6.5.4
   resolution: "elliptic@npm:6.5.4"
@@ -6131,6 +6152,13 @@ __metadata:
   version: 3.1.1
   resolution: "escalade@npm:3.1.1"
   checksum: a3e2a99f07acb74b3ad4989c48ca0c3140f69f923e56d0cba0526240ee470b91010f9d39001f2a4a313841d237ede70a729e92125191ba5d21e74b106800b133
+  languageName: node
+  linkType: hard
+
+"escalade@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "escalade@npm:3.1.2"
+  checksum: 1ec0977aa2772075493002bdbd549d595ff6e9393b1cb0d7d6fcaf78c750da0c158f180938365486f75cb69fba20294351caddfce1b46552a7b6c3cde52eaa02
   languageName: node
   linkType: hard
 
@@ -7058,10 +7086,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fraction.js@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "fraction.js@npm:4.1.1"
-  checksum: e5a1f81d73e32aabf4fbd6581a7b3dfabd9a449ceb97c7e71ed2931dd0607095622341100d7819741eb9b435eb4e0d4a040a69e411dc943fa9b3a3872f3a2e0f
+"fraction.js@npm:^4.3.7":
+  version: 4.3.7
+  resolution: "fraction.js@npm:4.3.7"
+  checksum: e1553ae3f08e3ba0e8c06e43a3ab20b319966dfb7ddb96fd9b5d0ee11a66571af7f993229c88ebbb0d4a816eb813a24ed48207b140d442a8f76f33763b8d1f3f
   languageName: node
   linkType: hard
 
@@ -7673,10 +7701,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"highcharts@npm:10.0.0":
+  version: 10.0.0
+  resolution: "highcharts@npm:10.0.0"
+  checksum: 1824e9b096fcdccd23a4533c9f7ff8bf46d48536a798c613e6564b5bb88dcdc5e0d2ccc0a9f6f20635219956d62d3b7339e8330fe2a31579f438fcabb3bd8d47
+  languageName: node
+  linkType: hard
+
 "highcharts@npm:^9.3.0":
-  version: 9.3.0
-  resolution: "highcharts@npm:9.3.0"
-  checksum: 479b0a413919c9ab2d65d2408d69024b287670f31688fd0c910b13c9fa191e58f5beb580475bc3fce92f35d77cd64776bb95b321dc1e23c7983e5a04fa30afea
+  version: 9.3.3
+  resolution: "highcharts@npm:9.3.3"
+  checksum: bd952eafcf7b1c136ab1e20d6b58172f9aeab9381c13e3d67f08b10eb6b2c1f96e62a8d276f29b1e92ef0a8cbc6d1696cd0e554691063a5183235e820b42404b
   languageName: node
   linkType: hard
 
@@ -9578,6 +9613,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mgrs@npm:1.0.0":
+  version: 1.0.0
+  resolution: "mgrs@npm:1.0.0"
+  checksum: 98b9fa3caff9986868344567996f8dcc833f939c2e140507a00e2ce9a96ef7eaeb81933a749222a2b7bcbc1a4bb6ada6120dda3a5b6af6d72ae332d8990956b9
+  languageName: node
+  linkType: hard
+
 "micromark@npm:~2.11.0":
   version: 2.11.4
   resolution: "micromark@npm:2.11.4"
@@ -10128,6 +10170,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-releases@npm:^2.0.14":
+  version: 2.0.14
+  resolution: "node-releases@npm:2.0.14"
+  checksum: 59443a2f77acac854c42d321bf1b43dea0aef55cd544c6a686e9816a697300458d4e82239e2d794ea05f7bbbc8a94500332e2d3ac3f11f52e4b16cbe638b3c41
+  languageName: node
+  linkType: hard
+
 "node-res@npm:^5.0.1":
   version: 5.0.1
   resolution: "node-res@npm:5.0.1"
@@ -10279,15 +10328,18 @@ __metadata:
   linkType: hard
 
 "nuxt-highcharts@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "nuxt-highcharts@npm:2.0.2"
+  version: 2.0.4
+  resolution: "nuxt-highcharts@npm:2.0.4"
   dependencies:
-    "@highcharts/map-collection": ^1.1.3
-    highcharts: ^9.3.0
+    "@highcharts/map-collection": ^2.0.0
+    highcharts: 10.0.0
+    proj4: ^2.8.0
   dependenciesMeta:
     "@highcharts/map-collection":
       optional: true
-  checksum: de17f32a0ec924fd9b0d020096e0139925195afd1634ff7a85601aaf6b61616bb32194e0bb89903df96c0388f6d9e95aefdb13e104f618191e557d96029ecd48
+    proj4:
+      optional: true
+  checksum: 4f22f2b947b71ca711e1e59ddb1a54c5482846f1d7a5b199ae1eae59df8cbf6524456b544cd051055ae8d9828b6ae0b7f47954db3069eb7d13f800ff8b9c2802
   languageName: node
   linkType: hard
 
@@ -11954,6 +12006,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-value-parser@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "postcss-value-parser@npm:4.2.0"
+  checksum: 819ffab0c9d51cf0acbabf8996dffbfafbafa57afc0e4c98db88b67f2094cb44488758f06e5da95d7036f19556a4a732525e84289a425f4f6fd8e412a9d7442f
+  languageName: node
+  linkType: hard
+
 "postcss-values-parser@npm:^2.0.0, postcss-values-parser@npm:^2.0.1":
   version: 2.0.1
   resolution: "postcss-values-parser@npm:2.0.1"
@@ -12101,6 +12160,16 @@ __metadata:
   version: 2.0.3
   resolution: "progress@npm:2.0.3"
   checksum: f67403fe7b34912148d9252cb7481266a354bd99ce82c835f79070643bb3c6583d10dbcfda4d41e04bbc1d8437e9af0fb1e1f2135727878f5308682a579429b7
+  languageName: node
+  linkType: hard
+
+"proj4@npm:^2.8.0":
+  version: 2.11.0
+  resolution: "proj4@npm:2.11.0"
+  dependencies:
+    mgrs: 1.0.0
+    wkt-parser: ^1.3.3
+  checksum: 1f6c78962cd3584af06ec47bd80ce7fe9e4ee41f6c8c2c60b7b592687e36eb97ed13e77adad7ca1d36296a3c2993982247610a8bd9121ec0d9803db871915eaa
   languageName: node
   linkType: hard
 
@@ -14886,6 +14955,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"update-browserslist-db@npm:^1.0.13":
+  version: 1.0.15
+  resolution: "update-browserslist-db@npm:1.0.15"
+  dependencies:
+    escalade: ^3.1.2
+    picocolors: ^1.0.0
+  peerDependencies:
+    browserslist: ">= 4.21.0"
+  bin:
+    update-browserslist-db: cli.js
+  checksum: 15f244dc83918c9a1779b86311d1be39d8f990e0a439db559fd2f54150b789fca774cdb4cc1886d5f18b06c767ed97f84d47356a5fda42da3bcc4e0f9b9d22e4
+  languageName: node
+  linkType: hard
+
 "upper-case@npm:^1.1.1":
   version: 1.1.3
   resolution: "upper-case@npm:1.1.3"
@@ -15463,6 +15546,13 @@ __metadata:
     assert-never: ^1.2.1
     babel-walk: 3.0.0-canary-5
   checksum: a00fe87b736e434bd8b9d3e62ddcd664bde7d3990a011a0f1bdeb499db0d6c28e6d2ef921dcc47650b8d436eee55459bcae8fab4ce1ed89f4926ddda407ab755
+  languageName: node
+  linkType: hard
+
+"wkt-parser@npm:^1.3.3":
+  version: 1.3.3
+  resolution: "wkt-parser@npm:1.3.3"
+  checksum: b001a7e8b83c1af66f4a1bc56d5041858191b13a530af20d80dda80de92ed672bec30c3528893480ad3ef03edf845e8e9962c79c77eae860530c99afd59ff94c
   languageName: node
   linkType: hard
 
