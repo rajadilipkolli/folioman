@@ -29,8 +29,7 @@ class TestImportCas(TestCase):
     def test_import_cas_new_folio_creation(self):
         # Test case for creating a new folio
         self.data["folios"] = [{
-            "amc_id": "123",
-            "folio": "91095687154 / 0",
+            "folio": "123",
             "KYC" : "OK",
             "PANKYC": "OK",
             "PAN": "ABCDE1234F",
@@ -58,8 +57,7 @@ class TestImportCas(TestCase):
                 ]
             }]
         }]
-        with self.assertRaises(ObjectDoesNotExist):
-            import_cas(self.data, self.user_id)
+        result = import_cas(self.data, self.user_id)
         self.assertEqual(Folio.objects.count(), 1)
 
     # Additional test cases can be added here to cover other functionalities
