@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.core.exceptions import ObjectDoesNotExist
 from mutualfunds.importers.cas import import_cas
-from mutualfunds.models import Portfolio, FundScheme, Folio, Transaction
+from mutualfunds.models import Portfolio, Folio
 
 class TestImportCas(TestCase):
 
@@ -50,7 +50,7 @@ class TestImportCas(TestCase):
                         "balance": 23.711,
                         "date": "2017-09-20",
                         "description": "Purchase",
-                        "dividend_rate": null,
+                        "dividend_rate": "",
                         "nav": 42.1747,
                         "type": "PURCHASE",
                         "units": 23.711
