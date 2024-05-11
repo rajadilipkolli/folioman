@@ -47,4 +47,5 @@ jobs:
           CELERY_BROKER_URL: redis://localhost:16379/3
           CELERY_RESULT_BACKEND: redis://localhost:16379/5
           QUANDL_API_KEY: PUT_QUANDL_API_HERE
+          ENVIRONMENT: dev
         run: python manage.py test folioman.tests mutualfunds.tests
