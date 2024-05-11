@@ -1,4 +1,4 @@
-name: api
+name: Django Tests CI
 
 on:
   push:
@@ -33,5 +33,17 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+      - name: Install Required softwares
+        run: |
+          cd ..
+          docker compose up -d timedb cache
+          sleep 5
+          docker ps -a
       - name: Test
+        env:
+          SECRET_KEY: '%k8!x4pm=mf!iqz^jws)ijn=)-md-uf_i=^mya1t*d!4f#^74k'
+          DATABASE_URL: psql://postgres:foliop4sswd@127.0.0.1:15432/folioman
+          CACHE_URL: rediscache://localhost:16379/1?client_class=django_redis.client.DefaultClient&timeout=86400
+          CELERY_BROKER_URL: redis://localhost:16379/3
+          CELERY_RESULT_BACKEND: redis://localhost:16379/5
         run: python manage.py test core.tests
