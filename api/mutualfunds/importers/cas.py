@@ -38,7 +38,7 @@ def import_cas(data: CASData, user_id):
     num_total = 0
     new_folios = 0
 
-    folios = data.folios or []
+    folios: List[Folio] = data.get("folios", []) or []
     fund_scheme_ids = []
     scheme_dates = {}
     for folio in folios:
