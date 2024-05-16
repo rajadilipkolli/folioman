@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.core.exceptions import ObjectDoesNotExist
 from mutualfunds.importers.cas import import_cas
-from mutualfunds.models import PortfolioType, FolioType
+from mutualfunds.models import Portfolio, Folio
 
 class TestImportCas(TestCase):
 
@@ -16,7 +16,7 @@ class TestImportCas(TestCase):
 
     def test_import_cas_valid_email_name(self):
         # Test case for valid email and name
-        PortfolioType.objects.create(email="test@example.com", name="Test User", user_id=self.user_id)
+        Portfolio.objects.create(email="test@example.com", name="Test User", user_id=self.user_id)
         result = import_cas(self.data, self.user_id)
         self.assertIsNotNone(result)
 
@@ -58,6 +58,6 @@ class TestImportCas(TestCase):
             }]
         }]
         result = import_cas(self.data, self.user_id)
-        self.assertEqual(FolioType.objects.count(), 1)
+        self.assertEqual(Folio.objects.count(), 1)
 
     # Additional test cases can be added here to cover other functionalities
