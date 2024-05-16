@@ -1,4 +1,3 @@
-from datetime import date
 import re
 
 from casparser.types import CASParserDataType, FolioType
