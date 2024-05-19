@@ -1,9 +1,9 @@
-import datetime
 import logging
 import time
 
 import requests
 from casparser_isin.cli import update_isin_db, print_version
+from datetime import date, datetime, timedelta
 from dateutil.parser import parse as date_parse
 from django_celery_beat.models import PeriodicTask
 from requests.exceptions import RequestException, Timeout
@@ -45,17 +45,18 @@ def fetch_nav(self, scheme_ids=None, update_portfolio_kwargs=None):
             else:
                 from_date = datetime.date(1970, 1, 1)
                 logger.info("Fetching NAV for %s from beginning", scheme.name)
-            mfapi_url = f"https://api.mfapi.in/mf/{scheme.amfi_code}"
-            response = requests.get(mfapi_url, timeout=60)
-            data = response.json()
-            for item in reversed(data["data"]):
-                date = date_parse(item["date"], dayfirst=True).date()
-                if date <= from_date:
-                    continue
-                NAVHistory.objects.get_or_create(
-                    scheme_id=scheme.id, date=date, defaults={"nav": item["nav"]}
-                )
-            time.sleep(2)
+            if from_date < date.today() - timedelta(days=1) :
+                mfapi_url = f"https://api.mfapi.in/mf/{scheme.amfi_code}"
+                response = requests.get(mfapi_url, timeout=60)
+                data = response.json()
+                for item in reversed(data["data"]):
+                    date = date_parse(item["date"], dayfirst=True).date()
+                    if date <= from_date:
+                        continue
+                    NAVHistory.objects.get_or_create(
+                        scheme_id=scheme.id, date=date, defaults={"nav": item["nav"]}
+                    )
+                time.sleep(2)
     kwargs = {}
     if isinstance(update_portfolio_kwargs, dict):
         kwargs.update(update_portfolio_kwargs)

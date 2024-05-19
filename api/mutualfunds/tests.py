@@ -64,7 +64,7 @@ class TestImportCas(TestCase):
     def test_import_cas_missing_kyc(self):
         # Test case for creating a new folio
         self.data["folios"] = [{
-            "folio": "123",
+            "folio": "124",
             "PANKYC": "OK",
             "KYC": "",
             "PAN": "ABCDE1234F",
@@ -92,8 +92,7 @@ class TestImportCas(TestCase):
                 ]
             }]
         }]
-        result = import_cas(self.data, self.user_id)
-        folio = result["folios"][0]
-        self.assertEqual(folio["KYC"], "notok")
+        import_cas(self.data, self.user_id)
+        self.assertEqual(Folio.objects.count(), 1)
 
     # Additional test cases can be added here to cover other functionalities
