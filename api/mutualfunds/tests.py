@@ -58,7 +58,7 @@ class TestImportCas(TestCase):
                 ]
             }]
         }]
-        result = import_cas(self.data, self.user_id)
+        import_cas(self.data, self.user_id)
         self.assertEqual(Folio.objects.count(), 1)
 
     def test_import_cas_missing_kyc(self):
@@ -66,6 +66,7 @@ class TestImportCas(TestCase):
         self.data["folios"] = [{
             "folio": "123",
             "PANKYC": "OK",
+            "KYC": "",
             "PAN": "ABCDE1234F",
             "schemes": [{
                 "advisor": "INA000006651",
