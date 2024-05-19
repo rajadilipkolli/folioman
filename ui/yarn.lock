@@ -4334,7 +4334,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.2.5":
+"autoprefixer@npm:^10.2.5, autoprefixer@npm:^10.4.19":
   version: 10.4.19
   resolution: "autoprefixer@npm:10.4.19"
   dependencies:
@@ -8152,7 +8152,7 @@ __metadata:
     "@vue/composition-api": ^1.3.0
     "@vuelidate/core": ^2.0.0-alpha.30
     "@vuelidate/validators": ^2.0.0-alpha.24
-    autoprefixer: ^10.2.5
+    autoprefixer: ^10.4.19
     core-js: ^3.16.3
     eslint: ^7.23.0
     eslint-config-prettier: ^8.1.0
@@ -8165,13 +8165,13 @@ __metadata:
     nuxt-highcharts: ^2.0.2
     nuxt-typed-vuex: ^0.3.0
     postcss: ^8.4.31
-    prettier: ^2.2.1
+    prettier: ^2.8.8
     primeicons: ^4.1.0
     primevue: ^2.5.1
     pug: ^3.0.2
     pug-plain-loader: ^1.1.0
-    sass: ^1.32.12
-    sass-loader: ^10.1.1
+    sass: ^1.77.2
+    sass-loader: ^10.5.2
     stylelint: ^13.12.0
     stylelint-config-prettier: ^8.0.2
     stylelint-config-standard: ^21.0.0
@@ -9443,6 +9443,13 @@ __metadata:
   version: 5.3.1
   resolution: "ignore@npm:5.3.1"
   checksum: 71d7bb4c1dbe020f915fd881108cbe85a0db3d636a0ea3ba911393c53946711d13a9b1143c7e70db06d571a5822c0a324a6bcde5c9904e7ca5047f01f1bf8cd3
+  languageName: node
+  linkType: hard
+
+"immutable@npm:^4.0.0":
+  version: 4.3.6
+  resolution: "immutable@npm:4.3.6"
+  checksum: 3afd020be988ec9ba42c1e585b88858970beba91332ac04ac11446722c7e5da03d5956f5049806573d29dfee25f69262297cb7f3bd6b16fc83a175a0176c6c2a
   languageName: node
   linkType: hard
 
@@ -13900,7 +13907,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.2.1":
+"prettier@npm:^2.8.8":
   version: 2.8.8
   resolution: "prettier@npm:2.8.8"
   bin:
@@ -15056,7 +15063,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:^10.1.1":
+"sass-loader@npm:^10.5.2":
   version: 10.5.2
   resolution: "sass-loader@npm:10.5.2"
   dependencies:
@@ -15081,14 +15088,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.32.12":
-  version: 1.43.3
-  resolution: "sass@npm:1.43.3"
+"sass@npm:^1.77.2":
+  version: 1.77.2
+  resolution: "sass@npm:1.77.2"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
+    immutable: ^4.0.0
+    source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: d253980cdafe6eab223cd57a44a49a43fc3123c0459c3d09d7f95ab4d4f2a8e3559996c6bfeed5be8dc428c85fd5b8f3cd165a0ede695df9fbd002f2094f8ea1
+  checksum: fd75b1f255a30ecd4ee79fa020830d7bf426dd15de2f47cf9610130707dc2a029da3677ca0a6c89e8d4626b0a2816456bb7fb706cb518cfbf2e7c0038ef7a4b8
   languageName: node
   linkType: hard
 
@@ -15575,17 +15584,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"source-map-js@npm:>=0.6.2 <2.0.0, source-map-js@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "source-map-js@npm:1.2.0"
+  checksum: 791a43306d9223792e84293b00458bf102a8946e7188f3db0e4e22d8d530b5f80a4ce468eb5ec0bf585443ad55ebbd630bf379c98db0b1f317fd902500217f97
+  languageName: node
+  linkType: hard
+
 "source-map-js@npm:^0.6.2":
   version: 0.6.2
   resolution: "source-map-js@npm:0.6.2"
   checksum: 9c8151a29e00fd8d3ba87709fdf9a9ce48313d653f4a29a39b4ae53d346ac79e005de624796ff42eff55cbaf26d2e87f4466001ca87831d400d818c5cf146a0e
-  languageName: node
-  linkType: hard
-
-"source-map-js@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "source-map-js@npm:1.2.0"
-  checksum: 791a43306d9223792e84293b00458bf102a8946e7188f3db0e4e22d8d530b5f80a4ce468eb5ec0bf585443ad55ebbd630bf379c98db0b1f317fd902500217f97
   languageName: node
   linkType: hard
 
