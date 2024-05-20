@@ -47,9 +47,8 @@ def fetch_nav(self, scheme_ids=None, update_portfolio_kwargs=None):
                 from_date = datetime.date(1970, 1, 1)
                 logger.info("Fetching NAV for %s from beginning", scheme.name)
             today = timezone.now().date()
-            logger.info("today's date ", today)
-            logger.info("from date ", from_date)
-            if today.weekday() == 5:  # Saturday
+            logger.info("today's date %s ", today.isoformat())
+            if today.weekday() == 5:  # Saturdaycd 
                 today = today - datetime.timedelta(days=1)
             elif today.weekday() == 6:  # Sunday
                 today = today - datetime.timedelta(days=2)
