@@ -156,7 +156,10 @@ class Migration(migrations.Migration):
             options={
                 "verbose_name": "Fund Scheme",
                 "verbose_name_plural": "Fund Schemes",
-                "index_together": {("amc_id", "rta_code"), ("rta", "rta_code")},
+                "indexes" : [
+                    models.Index(fields=["amc_id", "rta_code"], name="amc_id_rta_code"),
+                    models.Index(fields=["rta", "rta_code"], name="rta_rta_code"),
+                ],
             },
         ),
         migrations.CreateModel(
