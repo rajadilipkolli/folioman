@@ -157,8 +157,8 @@ class Migration(migrations.Migration):
                 "verbose_name": "Fund Scheme",
                 "verbose_name_plural": "Fund Schemes",
                 "indexes" : [
-                    models.Index(fields=["amc_id", "rta_code"], name="amc_id_rta_code"),
-                    models.Index(fields=["rta", "rta_code"], name="rta_rta_code"),
+                    models.Index(fields=["amc_id", "rta_code"], name="idx_rta_code_amc_id"),
+                    models.Index(fields=["rta", "rta_code"], name="idx_rta_code_rta"),
                 ],
             },
         ),
