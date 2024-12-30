@@ -65,7 +65,11 @@ class FundScheme(models.Model):
         return f"{self.name} - {self.plan}"
 
     class Meta:
-        index_together = [("amc_id", "rta_code"), ("rta", "rta_code")]
+        # index_together = [("amc_id", "rta_code"), ("rta", "rta_code")]
+        indexes = [
+            models.Index(fields=["amc_id", "rta_code"]),
+            models.Index(fields=["rta", "rta_code"])
+        ]
         verbose_name = "Fund Scheme"
         verbose_name_plural = "Fund Schemes"
 
