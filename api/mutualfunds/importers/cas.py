@@ -16,7 +16,7 @@ from mutualfunds.tasks import fetch_nav
 from mutualfunds.utils import get_closest_scheme
 
 
-def import_cas(data: CASParserDataType, user_id):
+def import_cas(data: CASData, user_id):
     investor_info = data.get("investor_info", {}) or {}
     period = data["statement_period"]
 
