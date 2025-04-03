@@ -1,7 +1,7 @@
 import re
 from typing import List
 
-from casparser.types import CASParserDataType, FolioType
+from casparser.types import CASData
 from dateutil.parser import parse as dateparse
 
 from mutualfunds.models import (
@@ -16,7 +16,7 @@ from mutualfunds.tasks import fetch_nav
 from mutualfunds.utils import get_closest_scheme
 
 
-def import_cas(data: CASParserDataType, user_id):
+def import_cas(data: CASData, user_id):
     investor_info = data.get("investor_info", {}) or {}
     period = data["statement_period"]
 
@@ -25,7 +25,7 @@ def import_cas(data: CASParserDataType, user_id):
     if not (email and name):
         raise ValueError("Email or Name invalid!")
 
-    folios: List[FolioType] = data.get("folios", []) or []
+    folios: List[Folio] = data.get("folios", []) or []
     try:
         pf = Portfolio.objects.get(email=email)
     except Portfolio.DoesNotExist:
