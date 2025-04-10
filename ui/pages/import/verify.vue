@@ -42,8 +42,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, useContext } from "@nuxtjs/composition-api";
-import { ImportData } from "@/definitions/defs";
+import { defineComponent, ref, useNuxtApp, useRouter } from "#imports";
+import { ImportData } from "@/definitions/defs.d";
 
 export default defineComponent({
   props: {
@@ -52,15 +52,13 @@ export default defineComponent({
       required: true,
     },
   },
-  setup({ formData }, { root, emit }) {
-    const { $router } = root;
+  setup({ formData }, { emit }) {
+    const router = useRouter();
+    const { $toast, $fetch } = useNuxtApp();
     const pageIndex = 1;
 
-    const { $toast } = root;
-    const { $axios } = useContext();
-
     if (!(formData && formData.pdfData)) {
-      $router.push("/import");
+      router.push("/import");
     }
 
     const loading = ref(false);
@@ -68,13 +66,15 @@ export default defineComponent({
     const prevPage = () => {
       emit("prev-page", { pageIndex });
     };
+
     const importData = () => {
       loading.value = true;
-      $axios
-        .post("/api/mutualfunds/cas/import", { data: formData.pdfData })
-        .then(({ data }) => {
+      $fetch("/api/mutualfunds/cas/import", {
+        method: "POST",
+        body: { data: formData.pdfData },
+      })
+        .then((data: any) => {
           loading.value = false;
-          // eslint-disable-next-line camelcase
           const { num_folios, transactions } = data;
           const { total, added } = transactions;
           $toast.add({
@@ -82,7 +82,6 @@ export default defineComponent({
             summary: "Import success!",
             detail:
               "New folios: " +
-              // eslint-disable-next-line camelcase
               num_folios +
               " :: Transactions imported - " +
               added +
@@ -90,9 +89,9 @@ export default defineComponent({
               total,
             life: 5000,
           });
-          $router.push("/");
+          router.push("/");
         })
-        .catch((error) => {
+        .catch((error: any) => {
           let detail = "Unknown error";
           if (error.response) {
             const { data } = error.response;

@@ -25,13 +25,13 @@ import {
   defineComponent,
   reactive,
   ref,
-  useContext,
-} from "@nuxtjs/composition-api";
+  useNuxtApp,
+} from "#imports";
 
 export default defineComponent({
   layout: "login",
   setup() {
-    const { $auth } = useContext();
+    const { $auth } = useNuxtApp();
 
     const creds = reactive({
       username: "",
@@ -47,7 +47,7 @@ export default defineComponent({
         await $auth.loginWith("local", {
           data: { username, password },
         });
-      } catch (err) {
+      } catch (err: any) {
         if (err.response) {
           const response = err.response;
           if (response.status_code === 400) {

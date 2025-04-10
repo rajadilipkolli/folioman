@@ -48,21 +48,17 @@ import {
   defineComponent,
   onMounted,
   ref,
-  useContext,
+  useNuxtApp,
   useRoute,
-  wrapProperty,
-} from "@nuxtjs/composition-api";
+} from "#imports";
 
-import { Scheme } from "@/definitions/mutualfunds";
-
-export const useAccessor = wrapProperty("$accessor", false);
+import { Scheme } from "~/definitions/mutualfunds.d";
 
 export default defineComponent({
   setup() {
-    const accessor = useAccessor();
+    const { $fetch } = useNuxtApp();
     const route = useRoute();
-    const { id } = route.value.params;
-    const { $axios } = useContext();
+    const { id } = route.params;
 
     const scheme = ref<Scheme>({
       avg_nav: 0,
@@ -81,6 +77,7 @@ export default defineComponent({
     });
     const transactions = ref([]);
     const loading = ref(false);
+
     const formatCurrency = (num: Number) => {
       return num.toLocaleString("en-IN", {
         minimumFractionDigits: 0,
@@ -93,37 +90,31 @@ export default defineComponent({
     const init = async () => {
       try {
         loading.value = true;
-        if (
-          !Object.prototype.hasOwnProperty.call(
-            accessor.mutualfunds.schemeData,
-            id
-          )
-        ) {
-          await accessor.mutualfunds.updateSchemes(false);
-        }
-        if (
-          Object.prototype.hasOwnProperty.call(
-            accessor.mutualfunds.schemeData,
-            id
-          )
-        ) {
-          scheme.value = accessor.mutualfunds.schemeData[id];
-          transactions.value = await $axios.$post(
+        const schemeData = await $fetch(
+          `/api/mutualfunds/schemeData/${id}`
+        );
+        if (schemeData) {
+          scheme.value = schemeData;
+          transactions.value = await $fetch(
             "/api/mutualfunds/portfolio/transactions/",
             {
-              portfolio_ids: [accessor.mutualfunds.currentPortfolio.id],
-              fund: scheme.value.id,
+              method: "POST",
+              body: {
+                portfolio_ids: [schemeData.currentPortfolio.id],
+                fund: schemeData.id,
+              },
             }
           );
         } else {
           // TODO: redirect to 404.
         }
       } catch {
-        console.log("here");
+        console.log("Error fetching scheme data");
       } finally {
         loading.value = false;
       }
     };
+
     onMounted(init);
 
     return { formatCurrency, scheme, transactions, loading };

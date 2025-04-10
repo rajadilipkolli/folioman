@@ -61,24 +61,29 @@ import {
   onMounted,
   computed,
   ref,
-  wrapProperty,
-} from "@nuxtjs/composition-api";
+  useNuxtApp,
+} from "#imports";
 
-import { Summary, Scheme } from "~/definitions/mutualfunds";
-
-export const useAccessor = wrapProperty("$accessor", false);
+import { Summary, Scheme } from "@/definitions/mutualfunds.d";
 
 export default defineComponent({
   setup() {
-    const accessor = useAccessor();
+    const { $fetch } = useNuxtApp();
 
-    const schemes = computed<Array<Scheme>>(() => accessor.mutualfunds.schemes);
-    const summary = computed<Summary>(() => accessor.mutualfunds.summary);
+    const schemes = ref<Array<Scheme>>([]);
+    const summary = ref<Summary>({
+      totalValue: 0,
+      totalInvested: 0,
+      totalChange: { A: 0, D: 0 },
+    });
     const schemesLoading = ref(false);
+
     const getSchemes = async () => {
       try {
         schemesLoading.value = true;
-        await accessor.mutualfunds.updateSchemes(false);
+        const data = await $fetch("/api/mutualfunds/schemes");
+        schemes.value = data.schemes;
+        summary.value = data.summary;
       } finally {
         schemesLoading.value = false;
       }

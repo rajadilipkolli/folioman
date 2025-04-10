@@ -1,6 +1,7 @@
-@import "./_variables";
-@import "./sass/_layout";
-@import "./_overrides";
+@use 'sass:color';
+@use "./_variables";
+@use "./sass/_layout";
+@use "./_overrides";
 
 $primary-color: #4CAF50;
 $base-bg: #2a2a2e !default;
@@ -14,10 +15,10 @@ $item-open-color: #ffffff !default;
 $item-open-bg: $primary-color !default;
 
 $item-hover-color: null !default;
-$item-hover-bg: rgba(darken($base-bg, 5%), 0.5) !default;
+$item-hover-bg: rgba(color.adjust($base-bg, $lightness: -5%), 0.5) !default;
 
 $icon-color: null !default;
-$icon-bg: darken( $base-bg, 5% ) !default;
+$icon-bg: color.adjust($base-bg, $lightness: -5%) !default;
 
 $icon-active-color: $primary-color;
 $icon-active-bg: null !default;
@@ -30,7 +31,7 @@ $mobile-item-bg: $primary-color !default;
 $mobile-icon-color: $mobile-item-color !default;
 $mobile-icon-bg: $mobile-item-bg !default;
 
-$dropdown-bg: lighten( $base-bg, 5% ) !default;
+$dropdown-bg: color.adjust($base-bg, $lightness: 5%) !default;
 $dropdown-color: null !default;
 
 $item-font-size: 16px !default;
@@ -38,9 +39,9 @@ $item-line-height: 30px !default;
 $item-padding: 10px !default;
 $icon-height: 30px !default;
 $icon-width: 30px !default;
-//
-@import "~vue-sidebar-menu/src/scss/vue-sidebar-menu.scss";
-//
+
+@use "vue-sidebar-menu/src/scss/vue-sidebar-menu";
+
 .v-sidebar-menu {
   .vsm--arrow::after {
     font-family: 'primeicons', sans-serif;
