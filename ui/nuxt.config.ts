@@ -31,13 +31,6 @@ export default defineNuxtConfig({
     },
   },
 
-  tailwindcss: {
-    config: {
-      separator: "_",
-      jit: true,
-    },
-  },
-
   build: {
     transpile: ['primevue'],
   },

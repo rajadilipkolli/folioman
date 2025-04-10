@@ -1,5 +1,4 @@
-// Placeholder for missing definitions. Ensure this file is updated with the correct content.
-import { PDFData } from '@/definitions/casparser.d'
+import { PDFData } from "~/definitions/casparser";
 
 export interface StepEvent extends Event {
   pageIndex: number

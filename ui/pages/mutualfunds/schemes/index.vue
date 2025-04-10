@@ -64,7 +64,7 @@ import {
   useNuxtApp,
 } from "#imports";
 
-import { Summary, Scheme } from "@/definitions/mutualfunds.d";
+import type { Summary, Scheme } from "~/definitions/mutualfunds";
 
 export default defineComponent({
   setup() {

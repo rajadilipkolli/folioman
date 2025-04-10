@@ -52,7 +52,7 @@ import {
   useRoute,
 } from "#imports";
 
-import { Scheme } from "~/definitions/mutualfunds.d";
+import type { Scheme } from "~/definitions/mutualfunds";
 
 export default defineComponent({
   setup() {

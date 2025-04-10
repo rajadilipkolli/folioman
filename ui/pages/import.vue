@@ -10,7 +10,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, reactive, toRefs, useRouter } from "#imports";
-import { StepEvent, ImportData } from "@/definitions/defs.d";
+import type { StepEvent, ImportData } from "~/definitions/defs";
 
 export default defineComponent({
   setup() {

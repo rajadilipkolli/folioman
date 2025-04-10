@@ -43,7 +43,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, useNuxtApp, useRouter } from "#imports";
-import { ImportData } from "@/definitions/defs.d";
+import type { ImportData } from "~/definitions/defs";
 
 export default defineComponent({
   props: {

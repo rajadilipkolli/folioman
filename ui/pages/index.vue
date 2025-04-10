@@ -138,10 +138,10 @@ import {
   SeriesPieOptions,
 } from "highcharts";
 
-import { MFPortfolio, Scheme, Summary } from "@/definitions/mutualfunds.d";
-import { StepEvent, ImportData } from "@/definitions/defs.d";
-import { Chart } from "@/definitions/charts.d";
-import { preparePieChartData, AllocationPieChartData } from "@/utils";
+import type { MFPortfolio, Scheme, Summary } from "~/definitions/mutualfunds";
+import type { Chart } from "~/definitions/charts";
+import { preparePieChartData } from "@/utils";
+import type { AllocationPieChartData } from "@/utils";
 
 export default defineComponent({
   setup() {
