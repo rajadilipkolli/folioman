@@ -4,7 +4,7 @@ from tablib import Dataset
 
 from mutualfunds.importers.cas import import_cas
 from mutualfunds.importers.master import FundSchemeResource
-from mutualfunds.models import Portfolio, Folio, FundScheme, Transaction, AMC
+from mutualfunds.models import Portfolio, Folio, FundScheme
 
 
 class TestImportCas(TestCase):
