@@ -27,8 +27,8 @@ import {
   defineComponent,
   computed,
   ref,
-  useContext,
-} from "@nuxtjs/composition-api";
+  useNuxtApp,
+} from "#imports";
 import { useVuelidate } from "@vuelidate/core";
 import { minLength, required } from "@vuelidate/validators";
 
@@ -39,7 +39,7 @@ interface FileUploader {
 
 export default defineComponent({
   setup(_, { emit }) {
-    const { $axios } = useContext();
+    const { $fetch } = useNuxtApp();
 
     const fileUploader = ref<FileUploader | null>(null);
     const loading = ref(false);
@@ -71,19 +71,20 @@ export default defineComponent({
 
       loading.value = true;
       error.value = "";
-      $axios
-        .post("/api/mutualfunds/casparser", data, {
-          headers: { "Content-Type": "multipart/form-data" },
-        })
-        .then(({ data }) => {
-          if (data.status !== "OK") {
-            error.value = data.message;
+      $fetch("/api/mutualfunds/casparser", {
+        method: "POST",
+        body: data,
+        headers: { "Content-Type": "multipart/form-data" },
+      })
+        .then((response: any) => {
+          if (response.status !== "OK") {
+            error.value = response.message;
           } else {
-            emit("next-page", { pdfData: data.data, pageIndex });
+            emit("next-page", { pdfData: response.data, pageIndex });
           }
           loading.value = false;
         })
-        .catch((err) => {
+        .catch((err: any) => {
           loading.value = false;
           if (err.response) {
             const response = err.response;

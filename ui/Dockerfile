@@ -1,4 +1,4 @@
-FROM node:16-buster
+FROM node:22-bullseye-slim
 USER node
 RUN mkdir /home/node/ui
 WORKDIR /home/node/ui
@@ -13,4 +13,4 @@ USER node
 RUN mkdir -p /home/node/ui/node_modules && \
     yarn install && \
     npm run build
-CMD npm run start
+CMD ["npm", "run", "start"]

@@ -1,21 +1,16 @@
-import {
-  actionTree,
-  getterTree,
-  getAccessorType,
-  mutationTree,
-} from "typed-vuex";
+import { actionTree, getterTree, getAccessorType, mutationTree } from 'typed-vuex'
 
-import * as mutualfunds from "~/store/mutualfunds";
+import * as mutualfunds from '~/store/mutualfunds'
 
-export const state = () => ({});
+export const state = () => ({})
 
-export type RootState = ReturnType<typeof state>;
+export type RootState = ReturnType<typeof state>
 
-export const getters = getterTree(state, {});
+export const getters = getterTree(state, {})
 
-export const mutations = mutationTree(state, {});
+export const mutations = mutationTree(state, {})
 
-export const actions = actionTree({ state, getters, mutations }, {});
+export const actions = actionTree({ state, getters, mutations }, {})
 
 export const accessorType = getAccessorType({
   state,
@@ -26,4 +21,4 @@ export const accessorType = getAccessorType({
     // The key (submodule) needs to match the Nuxt namespace (e.g. ~/store/submodule.ts)
     mutualfunds,
   },
-});
+})
