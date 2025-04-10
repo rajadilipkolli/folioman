@@ -21,3 +21,4 @@ requests==2.32.3
 sentry-sdk==2.19.2
 tablib[pandas]==3.7.0
 xirr==0.1.8
+PyYAML
