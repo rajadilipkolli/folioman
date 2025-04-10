@@ -1,4 +1,3 @@
-version: '3.4'
 
 x-app: &default-app
   #image: backend-image:latest
@@ -30,7 +29,7 @@ x-celery: &celery-app
 
 services:
   timedb:
-    image: timescale/timescaledb:latest-pg16
+    image: timescale/timescaledb:latest-pg17
     restart: unless-stopped
     volumes:
       - folioman-db:/var/lib/postgresql/data
