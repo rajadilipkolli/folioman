@@ -88,12 +88,11 @@ class TestImportCas(TestCase):
         self.assertEqual(transactions.count(), 1)
 
         transaction = transactions.first()
-        self.assertEqual(transaction.amount, 1000.0)
-        self.assertEqual(transaction.balance, 23.711)
-        self.assertEqual(transaction.nav, 42.1747)
-        self.assertEqual(transaction.units, 23.711)
+        self.assertEqual(transaction.amount, Decimal('1000.0'))
+        self.assertEqual(transaction.balance, Decimal('23.711'))
+        self.assertEqual(transaction.nav, Decimal('42.1747'))
+        self.assertEqual(transaction.units, Decimal('23.711'))
         self.assertEqual(transaction.description, "Purchase")
-
     def test_import_cas_missing_kyc(self):
         # Test case for missing KYC
         self.data["folios"] = [{
