@@ -3,3 +3,11 @@ vscode:
   extensions:
     - ms-python.python
     - Vue.volar
+
+ports:
+  - port: 5050
+    visibility: public
+    onOpen: open-browser
+  - port: 8000
+    visibility: public
+    onOpen: open-browser
