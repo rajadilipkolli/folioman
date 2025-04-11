@@ -30,11 +30,10 @@ username: admin
 password: foliom4n
 ```
 
----
-
-
 This will build the container images for backend, frontend and all dependent services
 and may take quite a while to finish.
+
+---
 
 ### Running Locally (Minimal Docker Setup)
 
