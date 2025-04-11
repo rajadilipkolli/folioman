@@ -52,12 +52,13 @@ yarn install
 
 # Build and start UI
 echo "Building and starting UI..."
-yarn run dev &
+# Modified to explicitly set the host to 0.0.0.0 to make it accessible from outside
+yarn run dev --host 0.0.0.0 &
 UI_PID=$!
 
 echo "================================================"
 echo "FolioMan is now running:"
-echo "API: http://localhost:8000"
+echo "API: http://localhost:8000/admin"
 echo "UI: http://localhost:3000"
 echo "PGAdmin: http://localhost:5050"
 echo "================================================"

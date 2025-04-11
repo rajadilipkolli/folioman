@@ -50,11 +50,11 @@ call yarn install
 
 REM Build and start UI
 echo Building and starting UI...
-start "UI Server" yarn run dev
+start "UI Server" yarn run dev --host 0.0.0.0
 
 echo ================================================
 echo FolioMan is now running:
-echo API: http://localhost:8000
+echo API: http://localhost:8000/admin
 echo UI: http://localhost:3000
 echo PGAdmin: http://localhost:5050
 echo ================================================
