@@ -53,7 +53,7 @@ services:
       - ./ui:/home/node/ui
       - folioman-ui-node-modules:/home/node/ui/node_modules
     working_dir: /home/node/ui
-    command: sh -c "yarn install && npm run build && npm run start"
+    command: sh -c "yarn install && yarn run build && yarn run start"
   api:
     build: ./api
     command: bash -c "/wait &&
