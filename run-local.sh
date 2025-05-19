@@ -19,7 +19,7 @@ source .venv/bin/activate || source .venv/Scripts/activate
 
 # Install Python requirements
 echo "Installing Python requirements..."
-cd api
+cd api || { echo "Error: api directory not found"; exit 1; }
 pip install -r requirements.txt
 pip install casparser-isin
 
@@ -44,7 +44,7 @@ API_PID=$!
 
 # Setup UI
 echo "Setting up UI..."
-cd ../ui
+cd ../ui || { echo "Error: ui directory not found"; exit 1; }
 
 # Install Node.js dependencies
 echo "Installing Node.js dependencies..."
@@ -69,7 +69,7 @@ function cleanup {
     echo "Shutting down services..."
     kill $API_PID
     kill $UI_PID
-    docker-compose -f ../docker-compose.local.yml down
+    cd $(dirname "$0") && docker-compose -f docker-compose.local.yml down
     exit 0
 }
 
