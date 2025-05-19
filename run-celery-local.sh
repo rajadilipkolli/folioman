@@ -12,7 +12,7 @@ fi
 # Activate virtual environment from .venv folder instead of venv
 source .venv/bin/activate
 
-cd api
+cd api || { echo "Error: Cannot change to api directory"; exit 1; }
 
 # Check if .env exists (should have been created by run-local.sh)
 if [ ! -f .env ]; then
