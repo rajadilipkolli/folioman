@@ -228,7 +228,7 @@ def cas_import(request):
     }
 
     pdf_data = request.data
-    data: casparser.CASParserDataType = pdf_data.get("data", {}) or {}
+    data: casparser.CASData = pdf_data.get("data", {}) or {}
 
     try:
         result = import_cas(data, request.user.id)
