@@ -1,0 +1,797 @@
+repo_name: rajadilipkolli/folioman
+report_id: 3b8e2bc3682b255ca53bfaed19c0596c
+version: 0.1
+repo_type: Public
+timestamp: '2024-05-10T18:30:37+00:00'
+requested_by: codereverser
+provider: github
+branch: main
+detected_tools_count: 55
+tools:
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/rajadilipkolli/folioman
+  detection_source: Repo Metadata
+- name: Pug
+  description: Robust, elegant, feature rich template engine for nodejs
+  website_url: https://pugjs.org
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Templating Languages & Extensions
+  image_url: https://img.stackshare.io/service/1175/pug.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/package.json
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2020-10-18 06:15:05.000000000 Z
+- name: Python
+  description: A clear and powerful object-oriented programming language, comparable
+    to Perl, Ruby, Scheme, or Java.
+  website_url: https://www.python.org
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/993/pUBY5pVj.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman
+  detection_source: Repo Metadata
+- name: TypeScript
+  description: A superset of JavaScript that compiles to clean JavaScript output
+  website_url: http://www.typescriptlang.org
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1612/bynNY5dJ.jpg
+  detection_source_url: https://github.com/rajadilipkolli/folioman
+  detection_source: Repo Metadata
+- name: Autoprefixer
+  description: PostCSS plugin to parse CSS and add vendor prefixes to CSS rules
+  website_url: https://github.com/postcss/autoprefixer
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: CSS Pre-processors / Extensions
+  image_url: https://img.stackshare.io/service/2202/72d087642cfce6fef6f2dabec5bf49e8_400x400.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/package.json
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-03-18 01:41:01.000000000 Z
+- name: Highcharts
+  description: A charting library written in pure JavaScript, offering an easy way
+    of adding interactive charts to your web site or web application
+  website_url: http://www.highcharts.com/products/highcharts
+  version: 9.3.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Charting Libraries
+  image_url: https://img.stackshare.io/service/1435/Vx4_Psj1.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-10-30 09:09:17.000000000 Z
+- name: Node.js
+  description: A platform built on Chrome's JavaScript runtime for easily building
+    fast, scalable network applications
+  website_url: http://nodejs.org/
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Frameworks (Full Stack)
+  image_url: https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2020-10-18 06:14:46.000000000 Z
+- name: Nuxt.js
+  description: The Vue.js Framework
+  website_url: https://nuxtjs.org
+  version: 2.15.8
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Front-End Frameworks
+  image_url: https://img.stackshare.io/service/7304/23360933.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2020-10-18 06:15:05.000000000 Z
+- name: PostCSS
+  description: Transform CSS with JS plugins
+  website_url: https://github.com/postcss/postcss
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: CSS Pre-processors / Extensions
+  image_url: https://img.stackshare.io/service/3339/rlFcjEdI.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/package.json
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2020-10-18 06:15:05.000000000 Z
+- name: Sass
+  description: Syntactically Awesome Style Sheets
+  website_url: http://sass-lang.com/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: CSS Pre-processors / Extensions
+  image_url: https://img.stackshare.io/service/1171/jCR2zNJV.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/package.json
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2020-10-18 06:15:05.000000000 Z
+- name: Vue.js
+  description: A progressive framework for building user interfaces
+  website_url: http://vuejs.org/
+  version: 2.6.14
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript MVC Frameworks
+  image_url: https://img.stackshare.io/service/3837/paeckCWC.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2020-10-18 06:15:05.000000000 Z
+- name: PostgreSQL
+  description: A powerful, open source object-relational database system
+  website_url: http://www.postgresql.org/
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Databases
+  image_url: https://img.stackshare.io/service/1028/ASOhU5xJ.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:15:21.000000000 Z
+- name: Redis
+  description: Open source (BSD licensed), in-memory data structure store
+  website_url: http://redis.io/
+  version: 4.3.4
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: In-Memory Databases
+  image_url: https://img.stackshare.io/service/1031/default_cbce472cd134adc6688572f999e9122b9657d4ba.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:38:09.000000000 Z
+- name: Docker
+  description: Enterprise Container Platform for High-Velocity Innovation.
+  website_url: https://www.docker.com/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Virtual Machine Platforms & Containers
+  image_url: https://img.stackshare.io/service/586/n4u37v9t_400x400.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman
+  detection_source: Repo Metadata
+- name: ESLint
+  description: The fully pluggable JavaScript code quality tool
+  website_url: http://eslint.org/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Code Review
+  image_url: https://img.stackshare.io/service/3337/Q4L7Jncy.jpg
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/package.json
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2020-10-18 06:15:05.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman
+  detection_source: Repo Metadata
+- name: NGINX
+  description: A high performance free open source web server powering busiest sites
+    on the Internet.
+  website_url: http://nginx.org
+  open_source: false
+  hosted_saas: false
+  category: Application Hosting
+  sub_category: Web Servers
+  image_url: https://img.stackshare.io/service/1052/YMxUfyWf.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2020-10-18 06:14:46.000000000 Z
+- name: Prettier
+  description: Prettier is an opinionated code formatter.
+  website_url: https://prettier.io/
+  version: 1.19.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Code Review
+  image_url: https://img.stackshare.io/service/7035/default_66f265943abed56bcdbfca1c866a4261b1fbb063.jpg
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-03-13 19:03:41.000000000 Z
+- name: PyPI
+  description: A repository of software for the Python programming language
+  website_url: https://pypi.org/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Hosted Package Repository
+  image_url: https://img.stackshare.io/service/12572/-RIWgodF_400x400.jpg
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-03-18 18:18:57.000000000 Z
+- name: Stylelint
+  description: A mighty, modern CSS linter
+  website_url: http://stylelint.io/
+  version: 13.13.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Code Review
+  image_url: https://img.stackshare.io/service/5446/V9JsvPul_400x400.jpg
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-04-02 10:05:39.000000000 Z
+- name: Yarn
+  description: A new package manager for JavaScript
+  website_url: https://yarnpkg.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/5848/44mC-kJ3.jpg
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/yarn.lock
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:28:17.000000000 Z
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/package.json
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2020-10-18 06:15:05.000000000 Z
+- name: Alpine Linux
+  description: Security-oriented, lightweight Linux distribution based on musl libc
+    and busybox
+  website_url: https://www.alpinelinux.org/
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Operating Systems
+  image_url: https://img.stackshare.io/service/6429/alpine_linux.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-04-12 17:03:56.000000000 Z
+- name: NumPy
+  description: Fundamental package for scientific computing with Python
+  website_url: http://www.numpy.org/
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Data Science Tools
+  image_url: https://img.stackshare.io/service/2179/default_332f874a2edb2686f578aa6389313efcea1eec41.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-03-18 18:18:57.000000000 Z
+- name: Primevue
+  description: Next generation Vue UI components library
+  website_url: https://primevue.org/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: UI Components
+  image_url: https://img.stackshare.io/service/101846/default_201b632ce878b4c300a8adab0167fb37180c2ea0.jpg
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/package.json
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-08-25 16:44:19.000000000 Z
+- name: Shell
+  description: A shell is a text-based terminal, used for manipulating programs and
+    files. Shell scripts typically manage program execution.
+  website_url: https://en.wikipedia.org/wiki/Shell_script
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman
+  detection_source: Repo Metadata
+- name: axios
+  description: Promise based HTTP client for the browser and node.js
+  website_url: https://github.com/mzabriskie/axios
+  version: 0.21.4
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript Utilities & Libraries
+  image_url: https://img.stackshare.io/no-img-open-source.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-08-25 16:44:19.000000000 Z
+- name: Django
+  description: A high-level Python Web framework that encourages rapid development
+    and clean
+  package_url: https://pypi.org/project/Django
+  version: '4.1'
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19832/default_58dbe7b4d7ec447b62773209af0f9a31bbabf5bd.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:38:09.000000000 Z
+  vulnerabilities:
+  - name: Django bypasses validation when using one form field to upload multiple
+      files
+    cve_id: CVE-2023-31047
+    cve_url: https://github.com/advisories/GHSA-r3xc-prgr-mg9p
+    detected_date: May 10
+    severity: critical
+    first_patched: 4.1.9
+  - name: Django potential denial of service vulnerability in UsernameField on Windows
+    cve_id: CVE-2023-46695
+    cve_url: https://github.com/advisories/GHSA-qmf9-6jqf-j8fq
+    detected_date: Apr 4
+    severity: high
+    first_patched: 4.1.13
+  - name: Resource exhaustion in Django
+    cve_id: CVE-2023-24580
+    cve_url: https://github.com/advisories/GHSA-2hrw-hx67-34x6
+    detected_date: Feb 16
+    severity: high
+    first_patched: 4.1.7
+  - name: Django has regular expression denial of service vulnerability in EmailValidator/URLValidator
+    cve_id: CVE-2023-36053
+    cve_url: https://github.com/advisories/GHSA-jh3w-4vvf-mjgr
+    detected_date: Jul 6
+    severity: high
+    first_patched: 4.1.10
+- name: gunicorn
+  description: WSGI HTTP Server for UNIX
+  package_url: https://pypi.org/project/gunicorn
+  version: 20.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19931/default_74a0c20721d3a0a1484d69586401591fe8993db2.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-04-12 15:14:04.000000000 Z
+  vulnerabilities:
+  - name: Request smuggling leading to endpoint restriction bypass in Gunicorn
+    cve_id: CVE-2024-1135
+    cve_url: https://github.com/advisories/GHSA-w3h3-4rj7-4ph4
+    detected_date: Apr 16
+    severity: high
+    first_patched: 22.0.0
+- name: sentry-sdk
+  description: Python client for Sentry
+  package_url: https://pypi.org/project/sentry-sdk
+  version: 1.9.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19998/default_b31141ac99e60278dc869f5a0490a63444b590d7.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:38:09.000000000 Z
+  vulnerabilities:
+  - name: Sentry SDK leaks sensitive session information when `sendDefaultPII` is
+      set to `True`
+    cve_id: CVE-2023-28117
+    cve_url: https://github.com/advisories/GHSA-29pr-6jr8-q5jm
+    detected_date: Mar 22
+    severity: high
+    first_patched: 1.14.0
+- name: djangorestframework-simplejwt
+  description: A minimal JSON Web Token authentication plugin for Django REST Framework
+  package_url: https://pypi.org/project/djangorestframework-simplejwt
+  version: 5.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:38:09.000000000 Z
+  vulnerabilities:
+  - name: Improper Privilege Management in djangorestframework-simplejwt
+    cve_id: CVE-2024-22513
+    cve_url: https://github.com/advisories/GHSA-5vcc-86wm-547q
+    detected_date: Mar 19
+    severity: moderate
+    first_patched:
+- name: requests
+  description: Python HTTP for Humans
+  package_url: https://pypi.org/project/requests
+  version: 2.28.1
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19826/default_d7c684bf2673f008a9f02ac93901229297a22d7e.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:38:09.000000000 Z
+  vulnerabilities:
+  - name: Unintended leak of Proxy-Authorization header in requests
+    cve_id: CVE-2023-32681
+    cve_url: https://github.com/advisories/GHSA-j8r2-6x86-q33q
+    detected_date: May 23
+    severity: moderate
+    first_patched: 2.31.0
+- name: celery
+  description: Distributed Task Queue
+  package_url: https://pypi.org/project/celery
+  version: 5.2.7
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19901/default_4f4fb10b6f169603a907dcb35a5a356d784e3bd3.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:38:09.000000000 Z
+- name: django-celery-results
+  description: Celery result backends for Django
+  package_url: https://pypi.org/project/django-celery-results
+  version: 2.4.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:38:09.000000000 Z
+- name: django-environ
+  description: Django-environ allows you to utilize 12factor inspired environment
+    variables to configure your Django application
+  package_url: https://pypi.org/project/django-environ
+  version: 0.9.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20684/default_c0915e70f83a4ff795fa420880db8a76377fceac.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:38:09.000000000 Z
+- name: django-import-export
+  description: Django application and library for importing and exporting data with
+    included admin integration
+  package_url: https://pypi.org/project/django-import-export
+  version: 2.8.0
+  license: BSD-2-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20791/default_3b7e58b539b7ec2308803d9baa08705044c42413.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:38:09.000000000 Z
+- name: django-redis
+  description: Full featured redis cache backend for Django
+  package_url: https://pypi.org/project/django-redis
+  version: 5.2.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20669/default_8661a5c1d9ac6f06e853c3c1b9fe936bb7029ff7.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:38:09.000000000 Z
+- name: djangorestframework
+  description: Web APIs for Django, made easy
+  package_url: https://pypi.org/project/djangorestframework
+  version: 3.13.1
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19870/default_d05f6f09935776629f62e8aed365805502c14921.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:38:09.000000000 Z
+- name: lxml
+  description: Powerful and Pythonic XML processing library combining libxml2/libxslt
+    with the ElementTree API
+  package_url: https://pypi.org/project/lxml
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19835/default_85689b353a3a9409328e253ea28d859d29151e0c.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-03-19 13:25:14.000000000 Z
+- name: pandas
+  description: Powerful data structures for data analysis
+  package_url: https://pypi.org/project/pandas
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19837/default_85689b353a3a9409328e253ea28d859d29151e0c.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:38:09.000000000 Z
+- name: psycopg2
+  description: Psycopg2 - Python-PostgreSQL Database Adapter
+  package_url: https://pypi.org/project/psycopg2
+  license: BSD-3-Clause-Attribution
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20416/default_64aa60b33468d1d28611966765867676f6303b64.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-03-19 13:25:14.000000000 Z
+- name: python-dateutil
+  description: Extensions to the standard Python datetime module
+  package_url: https://pypi.org/project/python-dateutil
+  version: 2.8.1
+  license: NRL
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19833/default_58dbe7b4d7ec447b62773209af0f9a31bbabf5bd.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-10-24 15:16:38.000000000 Z
+- name: pytz
+  description: World timezone definitions, modern and historical
+  package_url: https://pypi.org/project/pytz
+  version: '2021.1'
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19841/default_bb711fa267b2329ed689711a5adb7d9e74610b20.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-10-24 15:16:38.000000000 Z
+- name: tablib
+  description: Format agnostic tabular data library
+  package_url: https://pypi.org/project/tablib
+  version: 3.2.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20340/default_1df94722915923cd0ce380a3aa053d475566575b.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/api/requirements.txt
+  detection_source: api/requirements.txt
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2022-08-23 04:38:09.000000000 Z
+- name: core-js
+  description: Standard library
+  package_url: https://www.npmjs.com/core-js
+  version: 2.6.12
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15869/default_7c39a83d4acd952df89b1ebfdb94c8646324fbf1.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-10-30 09:09:17.000000000 Z
+- name: eslint-config-prettier
+  description: Turns off all rules that are unnecessary or might conflict with Prettier
+  package_url: https://www.npmjs.com/eslint-config-prettier
+  version: 8.3.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15879/default_0b10af8ca19c215f781dc07442e75bdc831089d0.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-04-02 10:05:39.000000000 Z
+- name: eslint-plugin-prettier
+  description: Runs prettier as an eslint rule
+  package_url: https://www.npmjs.com/eslint-plugin-prettier
+  version: 3.4.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15896/default_6e6e1d6bb189c8bb26c6410618bd597979578f39.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-04-02 10:05:39.000000000 Z
+- name: fs-extra
+  description: Fs-extra contains methods that aren't included in the vanilla Node.js
+    fs package
+  package_url: https://www.npmjs.com/fs-extra
+  version: 10.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15836/default_b71c906aeda030a5e2f1fe40bf12a93be52404ab.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-03-13 19:03:41.000000000 Z
+- name: mitt
+  description: Tiny 200b functional Event Emitter / pubsub
+  package_url: https://www.npmjs.com/mitt
+  version: 2.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/18719/default_88ba18730de3c1cd8c358a23343f72c83971e808.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-04-07 16:49:06.000000000 Z
+- name: pug-plain-loader
+  description: Pug to plain html loader for webpack
+  package_url: https://www.npmjs.com/pug-plain-loader
+  version: 1.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/18298/default_678ce8b19e8cee1dde03f165f62525a2c9d0c034.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-03-13 19:03:41.000000000 Z
+- name: sass-loader
+  description: Sass loader for webpack
+  package_url: https://www.npmjs.com/sass-loader
+  version: 10.1.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15842/default_b71c906aeda030a5e2f1fe40bf12a93be52404ab.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-05-07 08:06:22.000000000 Z
+- name: stylelint-config-prettier
+  description: Turns off all rules that are unnecessary or might conflict with Prettier
+  package_url: https://www.npmjs.com/stylelint-config-prettier
+  version: 8.0.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16896/default_e65289f03a07faa8d49ce16c483f18c4f8a98db9.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-04-02 10:05:39.000000000 Z
+- name: stylelint-config-standard
+  description: Standard shareable config for stylelint
+  package_url: https://www.npmjs.com/stylelint-config-standard
+  version: 21.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16266/default_9924e5da1d50ea01e52b48e4fae4b1347af5e4ff.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-04-02 10:05:39.000000000 Z
+- name: stylelint-scss
+  description: A collection of SCSS specific rules for stylelint
+  package_url: https://www.npmjs.com/stylelint-scss
+  version: 3.21.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16626/default_9012166d3e51cea5db6b4e69c80ace1c50b7509d.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2021-04-02 10:05:39.000000000 Z
+- name: vue
+  description: Vue
+  package_url: https://www.npmjs.com/vue
+  version: 2.6.14
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15844/default_b71c906aeda030a5e2f1fe40bf12a93be52404ab.png
+  detection_source_url: https://github.com/rajadilipkolli/folioman/blob/main/ui/yarn.lock
+  detection_source: ui/package.json
+  last_updated_by: Sandeep Somasekharan
+  last_updated_on: 2020-10-18 06:15:05.000000000 Z
