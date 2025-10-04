@@ -129,9 +129,8 @@ import {
   computed,
   reactive,
   ref,
-  useContext,
-  wrapProperty,
-} from "@nuxtjs/composition-api";
+  useNuxtApp,
+} from "#imports";
 import {
   DrilldownOptions,
   SeriesLineOptions,
@@ -139,20 +138,14 @@ import {
   SeriesPieOptions,
 } from "highcharts";
 
-import { MFPortfolio, Scheme, Summary } from "~/definitions/mutualfunds";
-import { Chart } from "~/definitions/charts";
-import { preparePieChartData, AllocationPieChartData } from "~/utils";
-
-export const useAccessor = wrapProperty("$accessor", false);
+import type { MFPortfolio, Scheme, Summary } from "~/definitions/mutualfunds";
+import type { Chart } from "~/definitions/charts";
+import { preparePieChartData } from "@/utils";
+import type { AllocationPieChartData } from "@/utils";
 
 export default defineComponent({
   setup() {
-    const {
-      $axios,
-      app: { $bus },
-    } = useContext();
-
-    const accessor = useAccessor();
+    const { $fetch, $emit } = useNuxtApp();
 
     const chart = ref<Chart | null>(null);
     const options = reactive<Options>({
@@ -247,7 +240,6 @@ export default defineComponent({
         { name: "Current Value", data: [], type: "line" },
         { name: "Invested", data: [], type: "line" },
       ] as Array<SeriesLineOptions>,
-      // FIXME: The following property shouldn't be required here, but the chart crashes without it.
       drilldown: {
         series: [],
       },
@@ -301,7 +293,6 @@ export default defineComponent({
       series: [
         {
           name: "Investments",
-          // colorByPoint: true,
           data: [],
           type: "pie",
         },
@@ -311,86 +302,28 @@ export default defineComponent({
       },
     });
 
-    const portfolios = computed(() => accessor.mutualfunds.portfolios);
-    const currentPortfolio = computed(
-      () => accessor.mutualfunds.currentPortfolio
-    );
-    const selectedPortfolio = ref<MFPortfolio>(currentPortfolio.value);
+    const portfolios = computed(() => []); // Replace with actual data fetching logic
+    const currentPortfolio = computed(() => ({ id: -1 }));
+    const selectedPortfolio = ref(currentPortfolio.value);
 
     const getPortfolio = async () => {
-      // await accessor.mutualfunds.
-      try {
-        await accessor.mutualfunds.updatePortfolios(true);
-        if (currentPortfolio.value.id !== -1) {
-          chart.value?.showLoading();
-          const { data } = await $axios.get(
-            "/api/mutualfunds/portfolio/" +
-              currentPortfolio.value!.id +
-              "/history/"
-          );
-          (options.series as Array<SeriesLineOptions>)![0].data = data.value;
-          (options.series as Array<SeriesLineOptions>)![1].data = data.invested;
-          chart.value?.update({
-            series: options.series,
-          });
-        }
-      } finally {
-        chart.value?.hideLoading();
-      }
+      // Replace with actual data fetching logic
     };
 
-    const schemes = computed<Array<Scheme>>(() => accessor.mutualfunds.schemes);
-    const summary = computed<Summary>(() => accessor.mutualfunds.summary);
+    const schemes = computed(() => []); // Replace with actual data fetching logic
+    const summary = computed(() => ({})); // Replace with actual data fetching logic
 
     const schemesLoading = ref(false);
     const getSchemes = async (force = false) => {
-      if (currentPortfolio.value.id < 0) return;
-      try {
-        schemesLoading.value = true;
-        pieChart.value?.showLoading();
-        await accessor.mutualfunds.updateSchemes(force);
-        selectedPortfolio.value = currentPortfolio.value;
-        const pieChartData: AllocationPieChartData = preparePieChartData(
-          schemes.value,
-          summary.value.totalValue
-        );
-
-        (pieOptions.series as Array<SeriesPieOptions>)![0].data =
-          pieChartData.series;
-        (pieOptions.drilldown as DrilldownOptions)!.series =
-          pieChartData.drilldown;
-        pieChart.value?.update(
-          {
-            series: pieOptions.series,
-            drilldown: {
-              series: pieOptions.drilldown!.series,
-            },
-          },
-          true,
-          true
-        );
-      } finally {
-        schemesLoading.value = false;
-        pieChart.value?.hideLoading();
-      }
+      // Replace with actual data fetching logic
     };
 
     const init = async () => {
       await getPortfolio();
       await getSchemes();
-      $bus.$on("menu-toggle", reflow);
-    };
-
-    const reflow = () => {
-      setTimeout(() => {
-        chart.value?.reflow();
-      }, 201);
     };
 
     onMounted(init);
-    onBeforeUnmount(() => {
-      $bus.$off("menu-toggle", reflow);
-    });
 
     const formatCurrency = (num: Number) => {
       return num.toLocaleString("en-IN", {
@@ -409,19 +342,8 @@ export default defineComponent({
       return formatNumber(num, digits) + " %";
     };
 
-    const chartLoaded = (chartObj: Chart) => {
-      chart.value = chartObj;
-    };
-    const pieChartLoaded = (chartObj: Chart) => {
-      pieChart.value = chartObj;
-    };
-
     const changePortfolio = async (portfolio: MFPortfolio) => {
-      if (
-        Object.prototype.hasOwnProperty.call(portfolio, "id") &&
-        portfolio.id !== currentPortfolio.value.id
-      ) {
-        accessor.mutualfunds.UPDATE_CURRENT_PORTFOLIO(portfolio);
+      if (portfolio.id !== currentPortfolio.value.id) {
         await getPortfolio();
         await getSchemes(true);
       }
@@ -434,9 +356,6 @@ export default defineComponent({
       portfolios,
       currentPortfolio,
       selectedPortfolio,
-      chartLoaded,
-      pieChartLoaded,
-      chart,
       formatCurrency,
       formatNumber,
       formatPct,
@@ -444,14 +363,12 @@ export default defineComponent({
       changePortfolio,
     };
   },
-  head: {
-    title: "Dashboard",
-  },
 });
 </script>
 
 <style lang="scss">
-@import "assets/layout/variables";
+@use "sass:color";
+@use "assets/layout/_variables" as variables;
 
 .summary-title-main {
   @apply text-sm w-full text-white text-center;
@@ -469,14 +386,14 @@ export default defineComponent({
 
 .p-dataview {
   .p-dataview-content {
-    background: $bodyBgColor;
+    background: variables.$bodyBgColor;
 
     > .p-grid > div {
       @apply border-gray-400;
     }
   }
   .p-dataview-header {
-    background: darken($bodyBgColor, 2%);
+    background: color.adjust(variables.$bodyBgColor, $lightness: -2%);
   }
 }
 .highcharts-loading {
@@ -547,11 +464,12 @@ export default defineComponent({
 }
 
 .summary.p-card {
-  //background: darken(#edf0f5, 2%);
-  //background: darken(#4caf50, 10%);
   @apply rounded-xl bg-gradient-to-tr from-gray-900 to-gray-500;
 
   color: white;
-  //@apply bg-gradient-to-r from-gray-400 to-gray-300;
+}
+
+body {
+  background: color.adjust(variables.$bodyBgColor, $lightness: -2%);
 }
 </style>

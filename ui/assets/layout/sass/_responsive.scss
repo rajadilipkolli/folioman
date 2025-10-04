@@ -1,3 +1,6 @@
+@use '../_variables' as *;
+@use './_mixins' as *;
+
 @media (min-width: 1025px) {
     /* stylelint-disable no-descending-specificity */
     .layout-wrapper {
