@@ -2353,17 +2353,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/typescript-build@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@nuxt/typescript-build@npm:2.1.0"
+"@nuxt/typescript-build@npm:^3.0.0":
+  version: 3.0.2
+  resolution: "@nuxt/typescript-build@npm:3.0.2"
   dependencies:
-    consola: ^2.15.3
-    fork-ts-checker-webpack-plugin: ^6.1.1
-    ts-loader: ^8.0.17
-    typescript: ~4.2
+    consola: ^3.0.0
+    defu: ^6.0.0
+    fork-ts-checker-webpack-plugin: 6.5.3
+    ts-loader: 8.4.0
   peerDependencies:
     "@nuxt/types": ">=2.13.1"
-  checksum: 1589023f12516698dc0ce4c035a49f5afaa126e680fb001f41d7b823b9a7e959ed49935d61a0f4efc3a6b6709cd9c0056ce651b3edf720098a998992a5d1dbc6
+    typescript: 4.x || 5.x
+  checksum: 58a6b453686003e54ab216e2514503609e55ede4b70693a9deebba50bfbe1a1ab0832a16373c8205eb19c83e9bddfaf91d3d73cb05dae957616f56a28004c744
   languageName: node
   linkType: hard
 
@@ -5859,6 +5860,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"consola@npm:^3.0.0":
+  version: 3.4.2
+  resolution: "consola@npm:3.4.2"
+  checksum: 32d1339e0505842f033ca34cb4572a841281caa367f438b785d3b284ab2a06134f009e605908480402c5f57f56c1e3210090c37e6417923416f76ce730d39361
+  languageName: node
+  linkType: hard
+
 "consola@npm:^3.2.3":
   version: 3.2.3
   resolution: "consola@npm:3.2.3"
@@ -6685,7 +6693,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"defu@npm:^6.1.4":
+"defu@npm:^6.0.0, defu@npm:^6.1.4":
   version: 6.1.4
   resolution: "defu@npm:6.1.4"
   checksum: 40e3af6338f195ac1564f53d1887fa2d0429ac7e8c081204bc4d29191180059d3952b5f4e08fe5df8d59eb873aa26e9c88b56d4fac699673d4a372c93620b229
@@ -8293,7 +8301,7 @@ __metadata:
   dependencies:
     "@babel/eslint-parser": ^7.13.14
     "@nuxt/types": ^2.15.8
-    "@nuxt/typescript-build": ^2.1.0
+    "@nuxt/typescript-build": ^3.0.0
     "@nuxtjs/auth-next": ^5.0.0-1624817847.21691f1
     "@nuxtjs/axios": ^5.13.6
     "@nuxtjs/composition-api": ^0.29.3
@@ -8371,9 +8379,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fork-ts-checker-webpack-plugin@npm:^6.1.1":
-  version: 6.4.0
-  resolution: "fork-ts-checker-webpack-plugin@npm:6.4.0"
+"fork-ts-checker-webpack-plugin@npm:6.5.3":
+  version: 6.5.3
+  resolution: "fork-ts-checker-webpack-plugin@npm:6.5.3"
   dependencies:
     "@babel/code-frame": ^7.8.3
     "@types/json-schema": ^7.0.5
@@ -8398,7 +8406,7 @@ __metadata:
       optional: true
     vue-template-compiler:
       optional: true
-  checksum: feba541453d4bdeaa743388541e125204789369920909f0152b11cfd1801a75fb2f6c708eae0174c9810ab4334fa21dea761037629440a647046581e7df62b8c
+  checksum: 9732a49bfeed8fc23e6e8a59795fa7c238edeba91040a9b520db54b4d316dda27f9f1893d360e296fd0ad8930627d364417d28a8c7007fba60cc730ebfce4956
   languageName: node
   linkType: hard
 
@@ -16872,9 +16880,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-loader@npm:^8.0.17":
-  version: 8.3.0
-  resolution: "ts-loader@npm:8.3.0"
+"ts-loader@npm:8.4.0":
+  version: 8.4.0
+  resolution: "ts-loader@npm:8.4.0"
   dependencies:
     chalk: ^4.1.0
     enhanced-resolve: ^4.0.0
@@ -16884,7 +16892,7 @@ __metadata:
   peerDependencies:
     typescript: "*"
     webpack: "*"
-  checksum: 93dd15b553a2621f969c4c834e7eb085b9b079adb702cba68a7ee516bcd2c67620e62cc5a8c57345e90c644ff6b689ee5a09f0702e440284fdfe872e9aaeefd8
+  checksum: 79da0f364c013231bff28baede3f4f4081b1cca30b24df2d9f31a0517e0524eca2c8e4d438b853b1566a3a8eb9ff51ab0b36743346f0b3d5daa7001c98e5c738
   languageName: node
   linkType: hard
 
@@ -17077,26 +17085,6 @@ __metadata:
   version: 0.0.6
   resolution: "typedarray@npm:0.0.6"
   checksum: 33b39f3d0e8463985eeaeeacc3cb2e28bc3dfaf2a5ed219628c0b629d5d7b810b0eb2165f9f607c34871d5daa92ba1dc69f49051cf7d578b4cbd26c340b9d1b1
-  languageName: node
-  linkType: hard
-
-"typescript@npm:~4.2":
-  version: 4.2.4
-  resolution: "typescript@npm:4.2.4"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 89c397df192f239359ad798b96d8e8d552e12c0c189ac5676cec4c20c410d6eec636b8e59a88f2aef0a56d961a9678d99c400099be9b7cae2f7b062eb4b7b171
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@~4.2#~builtin<compat/typescript>":
-  version: 4.2.4
-  resolution: "typescript@patch:typescript@npm%3A4.2.4#~builtin<compat/typescript>::version=4.2.4&hash=334f98"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: eb86e0e8022e5297f7a7b871b6edfbf33b57049416ada8bf97c358760125c7c79f074fbebd1b8e8230f858ae05eb22ad0e805e8f6acd5eae1fa886681624c15e
   languageName: node
   linkType: hard
 
