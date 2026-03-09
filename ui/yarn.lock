@@ -3721,11 +3721,17 @@ __metadata:
   linkType: hard
 
 "@vuelidate/core@npm:^2.0.0-alpha.30":
-  version: 2.0.0-alpha.30
-  resolution: "@vuelidate/core@npm:2.0.0-alpha.30"
+  version: 2.0.3
+  resolution: "@vuelidate/core@npm:2.0.3"
   dependencies:
-    vue-demi: ^0.11.3
-  checksum: af5bb8f31b5141f8e209d1092a1136506367c3cb76cb3aa5ffefa5f070854a4cb278c872f186b611ef566bef18abaf99e0c369fe6a22070ffcd6a8c264196010
+    vue-demi: ^0.13.11
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^2.0.0 || >=3.0.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  checksum: 3240a26135c2b1681d226f445264ffdb206f41bf554e09e2ac9e97e89ed7b804667628dddb8dc4da758fba8063e0d41939c196f79c74bf46df1081a18ba106cb
   languageName: node
   linkType: hard
 
@@ -17689,6 +17695,22 @@ __metadata:
     vue-demi-fix: bin/vue-demi-fix.js
     vue-demi-switch: bin/vue-demi-switch.js
   checksum: 794464387a6a031daa5cb8f751f1bd55f19a7dbe026385c8b0347a1b5c67bcc949c9f11c2b1bfc9e32a627b8e2caeb7fbff4b66c84d22ea625fbb77e57c6e075
+  languageName: node
+  linkType: hard
+
+"vue-demi@npm:^0.13.11":
+  version: 0.13.11
+  resolution: "vue-demi@npm:0.13.11"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  bin:
+    vue-demi-fix: bin/vue-demi-fix.js
+    vue-demi-switch: bin/vue-demi-switch.js
+  checksum: 0fbe9bf8ab7fe498ffa2bbd0cfc8f6f43a6bbaa5eda3e20ef1b70dca7c8b0ddb216a7ff2f632b694fe0735805638975abb441c621ec0bd2e6d4656353f316c15
   languageName: node
   linkType: hard
 
