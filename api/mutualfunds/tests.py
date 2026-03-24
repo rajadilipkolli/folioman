@@ -4,10 +4,11 @@ from tablib import Dataset
 
 from mutualfunds.importers.cas import import_cas
 from mutualfunds.importers.master import FundSchemeResource
-from mutualfunds.models import Portfolio, Folio, FundScheme
+from mutualfunds.models import Portfolio, Folio, FundScheme, AMC, FundCategory
 
 
 class TestImportCas(TestCase):
+    fixtures = ["users.yaml", "amc.yaml", "categories.yaml"]
 
     def setUp(self):
         # Mock data setup
@@ -17,6 +18,23 @@ class TestImportCas(TestCase):
             "statement_period": {"from": "2021-01-01", "to": "2021-01-31"}
         }
         self.user_id = 1
+
+        # Create a FundScheme that matches the data used in tests
+        amc, _ = AMC.objects.get_or_create(code="128", defaults={"name": "Axis Mutual Fund"})
+        cat, _ = FundCategory.objects.get_or_create(type="EQUITY", subtype="ELSS")
+        FundScheme.objects.get_or_create(
+            isin="INF846K01EW2",
+            defaults={
+                "sid": 120503,
+                "name": "Axis ELSS Tax Saver Fund - Direct Growth",
+                "rta": "KARVY",
+                "rta_code": "128TSDGG",
+                "amc": amc,
+                "category": cat,
+                "plan": "DIRECT",
+                "amc_code": "128",
+            }
+        )
 
     def test_import_cas_valid_email_name(self):
         # Test case for valid email and name

@@ -26,7 +26,6 @@ x-celery: &celery-app
     WAIT_TIMEOUT: 60
     WAIT_AFTER: 5
 
-
 services:
   timedb:
     image: timescale/timescaledb:latest-pg17
@@ -56,10 +55,9 @@ services:
     command: sh -c "yarn install && npm run build && npm run start"
   api:
     build: ./api
-    command: bash -c "/wait &&
-                      /venv/bin/python /api/manage.py migrate --noinput &&
-                      /venv/bin/python manage.py collectstatic --noinput &&
-                      /venv/bin/gunicorn wsgi --bind 0.0.0.0:8000"
+    command: bash -c "/wait && /venv/bin/python /api/manage.py migrate --noinput && /venv/bin/python manage.py collectstatic --noinput && /venv/bin/gunicorn wsgi --bind 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
     <<: *default-app
     depends_on:
       - timedb
@@ -67,7 +65,7 @@ services:
   web:
     image: nginx:alpine
     ports:
-      - "8000:80"
+      - "8080:80"
     volumes:
       - folioman-static:/api/static
       - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro

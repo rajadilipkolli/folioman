@@ -40,6 +40,7 @@
     "@nuxtjs/eslint-module": "^4.0.0",
     "@nuxtjs/stylelint-module": "4.0.0",
     "@nuxtjs/tailwindcss": "^4.2.1",
+    "@playwright/test": "1.58.2",
     "@types/nuxtjs__auth": "^4.8.8",
     "autoprefixer": "^10.4.19",
     "eslint": "^7.23.0",

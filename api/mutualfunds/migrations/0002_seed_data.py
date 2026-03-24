@@ -8,9 +8,14 @@ FIXTURE_DIR = pathlib.Path(__file__).resolve().parent.parent / "fixtures"
 
 # noinspection PyUnusedLocal
 def load_data(apps, schema_editor):
+    from django.conf import settings
+    import sys
+    
     for fixture in FIXTURE_DIR.glob("*.yaml"):
         call_command("loaddata", fixture, verbosity=1)
-    call_command("load_schemes")
+    
+    if 'test' not in sys.argv and not settings.DATABASES['default']['NAME'].startswith('test_'):
+        call_command("load_schemes")
 
 
 # noinspection PyUnusedLocal

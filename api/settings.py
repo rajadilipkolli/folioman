@@ -26,7 +26,7 @@ env = environ.Env(
 
 # Ensure the .env file is loaded
 BASE_DIR = Path(__file__).resolve().parent
-ENV_FILE = BASE_DIR / '.env'
+ENV_FILE = Path(os.getenv("ENV_FILE", str(BASE_DIR / '.env')))
 if ENV_FILE.exists():
     environ.Env.read_env(str(ENV_FILE))
 
@@ -134,7 +134,6 @@ TIME_ZONE = "Asia/Kolkata"
 
 USE_I18N = True
 
-USE_L10N = True
 
 USE_TZ = True
 
