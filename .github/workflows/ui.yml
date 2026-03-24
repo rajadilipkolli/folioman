@@ -40,10 +40,15 @@ jobs:
           docker compose up -d timedb cache api
           # Wait for API to be ready
           echo "Waiting for API..."
-          for i in {1..30}; do
-            if docker compose logs api | grep -q "Listening at: http://0.0.0.0:8000"; then
+          for i in {1..60}; do
+            if docker compose logs api 2>&1 | grep -q "Listening at: http://0.0.0.0:8000"; then
               echo "API is ready!"
               break
+            fi
+            if [ $i -eq 60 ]; then
+              echo "Timeout waiting for API"
+              docker compose logs api
+              exit 1
             fi
             echo -n "."
             sleep 2
