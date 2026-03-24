@@ -41,10 +41,11 @@ jobs:
           # Wait for API to be ready
           echo "Waiting for API..."
           for i in {1..30}; do
-            if docker compose logs api | grep -q "Quit the server with CONTROL-C"; then
+            if docker compose logs api | grep -q "Listening at: http://0.0.0.0:8000"; then
               echo "API is ready!"
               break
             fi
+            echo -n "."
             sleep 2
           done
           # Create E2E test user
