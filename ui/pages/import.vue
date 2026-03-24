@@ -9,12 +9,12 @@
               @complete="complete")
 </template>
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from "@nuxtjs/composition-api";
-import { StepEvent, ImportData } from "@/definitions/defs";
+import { defineComponent, reactive, toRefs, useRouter } from "#imports";
+import type { StepEvent, ImportData } from "~/definitions/defs";
 
 export default defineComponent({
-  setup(_, { root }) {
-    const { $router } = root;
+  setup() {
+    const router = useRouter();
     const items = reactive({
       pageList: [
         {
@@ -36,15 +36,17 @@ export default defineComponent({
       if (Object.prototype.hasOwnProperty.call(event, "pdfData")) {
         importData.pdfData = event.pdfData!;
       }
-      $router.push(items.pageList[event.pageIndex + 1].to);
+      router.push(items.pageList[event.pageIndex + 1].to);
     };
 
     const prevPage = (event: StepEvent) => {
-      $router.push(items.pageList[event.pageIndex - 1].to);
+      router.push(items.pageList[event.pageIndex - 1].to);
     };
+
     const complete = () => {
       /* hello */
     };
+
     return { importData, ...toRefs(items), nextPage, prevPage, complete };
   },
 });
