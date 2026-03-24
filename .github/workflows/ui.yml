@@ -37,6 +37,7 @@ jobs:
       - name: Start Backend Services
         run: |
           cd ..
+          cp api/env.example api/.env
           docker compose up -d timedb cache api
           # Wait for API to be ready
           echo "Waiting for API..."
