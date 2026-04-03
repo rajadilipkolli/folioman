@@ -1,6 +1,6 @@
 casparser[mupdf]==0.5.5
 celery==5.6.3
-Django==5.1.15
+Django==5.2.12
 django-celery-beat==2.7.0
 django-celery-results==2.5.1
 django-click>=2.3.0
