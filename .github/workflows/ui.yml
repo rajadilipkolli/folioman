@@ -59,12 +59,18 @@ jobs:
       - name: Start UI Development Server
         run: |
           yarn dev &
+          UI_PID=$!
           # Wait for UI to be ready
           echo "Waiting for UI..."
           for i in {1..30}; do
-            if curl -s http://localhost:3000 > /dev/null; then
+            if curl -s -f http://localhost:3000 > /dev/null 2>&1; then
               echo "UI is ready!"
               break
+            fi
+            if [ $i -eq 30 ]; then
+              echo "Timeout waiting for UI"
+              kill $UI_PID 2>/dev/null || true
+              exit 1
             fi
             sleep 2
           done
