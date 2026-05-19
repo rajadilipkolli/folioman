@@ -10,21 +10,16 @@ x-app: &default-app
       target: /api/.env
   restart: unless-stopped
   depends_on:
-    - timedb
-    - cache
-  environment:
-    WAIT_HOSTS: timedb:5432, cache:6379
-    WAIT_TIMEOUT: 60
-    WAIT_AFTER: 5
+    timedb:
+      condition: service_healthy
+    cache:
+      condition: service_healthy
 
 x-celery: &celery-app
   <<: *default-app
   depends_on:
-    - api
-  environment:
-    WAIT_HOSTS: api:8000
-    WAIT_TIMEOUT: 60
-    WAIT_AFTER: 5
+    api:
+      condition: service_healthy
 
 services:
   timedb:
@@ -38,6 +33,11 @@ services:
       POSTGRES_DB: folioman
     ports:
       - "127.0.0.1:15432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
   cache:
     image: redis:alpine
     command: [ "redis-server", "--appendonly", "yes" ]
@@ -45,6 +45,11 @@ services:
       - folioman-cache:/data
     ports:
       - "127.0.0.1:16379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
   ui:
     build: ./ui
     user: node
@@ -55,13 +60,19 @@ services:
     command: sh -c "yarn install && npm run build && npm run start"
   api:
     build: ./api
-    command: bash -c "/wait && /venv/bin/python /api/manage.py migrate --noinput && /venv/bin/python manage.py collectstatic --noinput && /venv/bin/gunicorn wsgi --bind 0.0.0.0:8000"
+    command: bash -c "/venv/bin/python /api/manage.py migrate --noinput && /venv/bin/python manage.py collectstatic --noinput && /venv/bin/gunicorn wsgi --bind 0.0.0.0:8000"
     ports:
       - "8000:8000"
     <<: *default-app
     depends_on:
       - timedb
       - cache
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
   web:
     image: nginx:alpine
     ports:
@@ -74,11 +85,11 @@ services:
       - ui
   beat:
     <<: *celery-app
-    command: bash -c "/wait && rm -f /tmp/beat.pid && /venv/bin/celery -A taskman beat -l INFO --pidfile=/tmp/beat.pid"
+    command: bash -c "rm -f /tmp/beat.pid && /venv/bin/celery -A taskman beat -l INFO --pidfile=/tmp/beat.pid"
 
   worker:
     <<: *celery-app
-    command: bash -c "/wait && /venv/bin/celery -A taskman worker -l INFO"
+    command: bash -c "/venv/bin/celery -A taskman worker -l INFO"
 
   pgadmin:
     image: dpage/pgadmin4

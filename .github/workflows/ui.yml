@@ -38,11 +38,43 @@ jobs:
         run: |
           cd ..
           cp api/env.example api/.env
-          docker compose up -d timedb cache api
+          # Start services with healthchecks
+          docker compose up -d timedb cache
+          # Wait for database and cache
+          echo "Waiting for database..."
+          for i in {1..60}; do
+            if docker compose exec -T timedb pg_isready -U postgres > /dev/null 2>&1; then
+              echo "Database is ready!"
+              break
+            fi
+            if [ $i -eq 60 ]; then
+              echo "Timeout waiting for database"
+              docker compose logs timedb
+              exit 1
+            fi
+            echo -n "."
+            sleep 2
+          done
+          echo "Waiting for cache..."
+          for i in {1..30}; do
+            if docker compose exec -T cache redis-cli ping > /dev/null 2>&1; then
+              echo "Cache is ready!"
+              break
+            fi
+            if [ $i -eq 30 ]; then
+              echo "Timeout waiting for cache"
+              docker compose logs cache
+              exit 1
+            fi
+            echo -n "."
+            sleep 2
+          done
+          # Now start API
+          docker compose up -d api
           # Wait for API to be ready
           echo "Waiting for API..."
           for i in {1..60}; do
-            if docker compose logs api 2>&1 | grep -q "Listening at: http://0.0.0.0:8000"; then
+            if docker compose logs api 2>&1 | grep -q "Listening at: http://0.0.0.0:8000" || curl -s -f http://localhost:8000/health > /dev/null 2>&1; then
               echo "API is ready!"
               break
             fi
