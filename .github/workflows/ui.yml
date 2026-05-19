@@ -74,7 +74,7 @@ jobs:
           # Wait for API to be ready
           echo "Waiting for API..."
           for i in {1..60}; do
-            if docker compose logs api 2>&1 | grep -q "Listening at: http://0.0.0.0:8000" || curl -s -f http://localhost:8000/health > /dev/null 2>&1; then
+            if docker compose logs api 2>&1 | grep -q "Listening at: http://0.0.0.0:8000" 2>&1; then
               echo "API is ready!"
               break
             fi

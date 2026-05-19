@@ -10,16 +10,13 @@ x-app: &default-app
       target: /api/.env
   restart: unless-stopped
   depends_on:
-    timedb:
-      condition: service_healthy
-    cache:
-      condition: service_healthy
+    - timedb
+    - cache
 
 x-celery: &celery-app
   <<: *default-app
   depends_on:
-    api:
-      condition: service_healthy
+    - api
 
 services:
   timedb:
@@ -67,12 +64,6 @@ services:
     depends_on:
       - timedb
       - cache
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 30s
   web:
     image: nginx:alpine
     ports:
