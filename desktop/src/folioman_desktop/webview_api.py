@@ -85,7 +85,7 @@ class WebviewApi:
         )
         if not selection:  # cancelled
             return False
-        
+
         path = Path(selection) if isinstance(selection, str) else Path(selection[0])
         try:
             path.write_text(content, encoding="utf-8")
@@ -93,4 +93,3 @@ class WebviewApi:
         except OSError:
             logger.exception("desktop: could not save file %s", path)
             return False
-
